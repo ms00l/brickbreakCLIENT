@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Karla",
+            sans-serif;
+}
+
+.container {
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1rem;
+}
+
+article h1 {
+    margin: 1rem 0;
+}
+
+#canvas {
+    background-color: black;
+    border-radius: 20px;
+}

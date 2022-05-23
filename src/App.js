@@ -5,11 +5,13 @@ import { v4 as uuid } from 'uuid'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
-import Header from './components/Header/Header'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import Header from './components/Header/Header'
+import Brickbreaker from './games/brick'
+import './App.css'
 
 class App extends Component {
   constructor (props) {
@@ -44,8 +46,8 @@ class App extends Component {
 
     return (
       <Fragment>
-	      <Header user={user} />
-	      {msgAlerts.map((msgAlert) => (
+        <Header user={user} />
+        {msgAlerts.map((msgAlert) => (
           <AutoDismissAlert
             key={msgAlert.id}
             heading={msgAlert.heading}
@@ -55,8 +57,8 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
-	      <main className='container'>
-	        <Route
+        <main className='container'>
+          <Route
             path='/sign-up'
             render={() => (
               <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -84,6 +86,13 @@ class App extends Component {
             path='/change-password'
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/brickbreaker'
+            render={() => (
+              <Brickbreaker user={user} />
             )}
           />
         </main>
