@@ -27,7 +27,7 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <Navbar expand='md' useTransparent>
     <Navbar.Brand>
-      <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>react-auth-template</Link>
+      <Link to='/' style={{ color: 'Black', textDecoration: 'none' }}>ITS FUCKING BRICKBREAKER BITCH</Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>
