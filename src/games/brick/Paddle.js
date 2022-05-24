@@ -5,16 +5,16 @@ export default (ctx, canvas, paddleProps) => {
       this.y = canvas.height - 30
       this.height = 20
       this.width = paddleProps.width
-      this.colors = ['white', '#FFA62B']
+      this.colors = 'white'
     }
 
     move () {
       ctx.beginPath()
       ctx.rect(this.x, this.y, this.width, this.height)
-      ctx.fillStyle = this.broke ? 'white' : this.colors[1]
-      ctx.strokeStyle = this.broke ? 'white' : 'red'
+      ctx.fillStyle = 'white'
+      ctx.strokeStyle = 'white'
       ctx.lineWidth = 1
-      ctx.fillStyle = this.broke ? 'white' : this.colors[1]
+      ctx.fillStyle = 'white'
       ctx.shadowBlur = 0
       ctx.shadowColor = 'blue'
       ctx.strokeRect(this.x, this.y, this.width, this.height)
