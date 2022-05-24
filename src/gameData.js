@@ -11,11 +11,11 @@ export default {
     x: 0.5,
     y: 50,
     height: 20,
-    density: 2,
+    density: 1,
     colors: ['white', 'lightblue']
   },
   player: {
-    name: 'Dhaval',
+    name: 'big dogg mcgraw',
     lives: 5,
     score: 0,
     level: 1

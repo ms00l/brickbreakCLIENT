@@ -7,6 +7,7 @@ import Paddle from './Paddle'
 import Brick from './Brick'
 import BrickCollision from '../util/BrickCollision'
 import PaddleCollision from '../util/PaddleCollision'
+import Player from './Player'
 
 let bricks = []
 
@@ -18,6 +19,8 @@ export default function Board () {
     const render = () => {
       const canvas = canvasRef.current
       const ctx = canvas.getContext('2d')
+      // assigning paddleprops so that the paddle physics work:
+      paddleProps.y = canvas.height - 30
 
       // assign bricks
       let newBrickSet = Brick(player.level, bricks, canvas, brickObj)
@@ -26,6 +29,7 @@ export default function Board () {
       }
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+      Player(ctx, player, canvas)
 
       // displays the bricks
       bricks.map((brick) => {
@@ -34,7 +38,7 @@ export default function Board () {
       // handling ball movement
       BallMovement(ctx, ballObj)
       // what happens when ball hits wall
-      WallCollision(ballObj, canvas)
+      WallCollision(ballObj, canvas, player)
 
       // brick collision
       let brickCollision
