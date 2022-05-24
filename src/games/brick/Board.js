@@ -4,13 +4,21 @@ import data from './../../gameData'
 import WallCollision from '../util/WallCollision'
 import Paddle from './Paddle'
 
+let bricks = []
+
+
+const { ballObj, paddleProps } = data
+
 export default function Board () {
   const canvasRef = useRef(null)
   useEffect(() => {
     const render = () => {
       const canvas = canvasRef.current
       const ctx = canvas.getContext('2d')
-      const { ballObj, paddleProps } = data
+
+      // assign bricks
+      
+
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       // handling ball movement
       BallMovement(ctx, ballObj)
@@ -32,7 +40,11 @@ export default function Board () {
   }, [])
   return (
     <>
-      <canvas id="canvas" ref={canvasRef} height="500" width={window.innerWidth - 20} />
+      <canvas id="canvas"
+        ref={canvasRef}
+        onMouseMove={(event) => (paddleProps.x = event.clientX - paddleProps.width / 2)}
+        height="500"
+        width="800" />
     </>
   )
 }

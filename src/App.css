@@ -24,4 +24,5 @@ article h1 {
     border-radius: 20px;
     position: relative;
     align-items: center;
+    cursor: none;
 }
