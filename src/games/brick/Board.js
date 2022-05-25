@@ -57,7 +57,8 @@ export default function Board () {
             ballObj.dy *= -1
             bricks[i].broken = true
           }
-          player.score += 10
+          // adds 1 to score once brick is broken
+          player.score += 1
         }
       }
 
