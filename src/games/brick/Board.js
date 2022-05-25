@@ -8,6 +8,7 @@ import Brick from './Brick'
 import BrickCollision from '../util/BrickCollision'
 import PaddleCollision from '../util/PaddleCollision'
 import Player from './Player'
+import NewLevel from '../util/NewLevel'
 
 let bricks = []
 
@@ -37,8 +38,10 @@ export default function Board () {
       })
       // handling ball movement
       BallMovement(ctx, ballObj)
+      // pass in end level function written in BrokenBricks.js
+      NewLevel(bricks, player, canvas, ballObj)
       // what happens when ball hits wall
-      WallCollision(ballObj, canvas, player)
+      WallCollision(ballObj, canvas, player, paddleProps)
 
       // brick collision
       let brickCollision
