@@ -20,7 +20,7 @@ export default function PaddleCollision (ballObj, paddleProps) {
     // calculates the angle of the ball
     let angle = (collisionPoint * Math.PI) / 3
     // manipulating the x direction
-    ballObj.dx = ballObj.speed * Math.sin(angle)
+    ballObj.dx = ballObj.speed * Math.cos(angle)
     // manipulating the y direction
     ballObj.dy = -ballObj.speed * Math.sin(angle)
   }

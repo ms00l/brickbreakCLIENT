@@ -3,13 +3,13 @@ export default function WallCollision (
   ballObj,
   canvas,
   player,
-  paddleProps,
-  setLives
+  paddleProps
 ) {
   if (ballObj.y + ballObj.rad > canvas.height) {
     // lose a life if the ball hits on 'wall' below paddle
     player.lives--
     ballObj.x = paddleProps.x
+    // this sets where the paddle registers when hit with the ball
     ballObj.y = paddleProps.y - 30
     ballObj.dx = 6 * (Math.random() * 2 - 1)
     ballObj.dy = -6

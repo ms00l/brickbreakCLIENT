@@ -9,6 +9,7 @@ import BrickCollision from '../util/BrickCollision'
 import PaddleCollision from '../util/PaddleCollision'
 import Player from './Player'
 import NewLevel from '../util/NewLevel'
+// import Reset from '../util/Reset'
 
 let bricks = []
 
@@ -32,6 +33,15 @@ export default function Board () {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       Player(ctx, player, canvas)
 
+      // game ending if statement
+      // if (player.lives === 0) {
+      //   player.lives = 5
+      //   player.level = 1
+      //   player.score = 0
+      //   Reset(ballObj, paddleProps)
+      //   bricks.length = 0
+      // }
+
       // displays the bricks
       bricks.map((brick) => {
         return brick.draw(ctx)
@@ -40,6 +50,10 @@ export default function Board () {
       BallMovement(ctx, ballObj)
       // pass in end level function written in BrokenBricks.js
       NewLevel(bricks, player, canvas, ballObj)
+      // add conditional if only all the bricks are hit
+      // add functionality to do a check to see if all the bricks are broken in brickcollision.js
+      // or write a loop that checks if bricks are broken
+      // console.log(bricks)
       // what happens when ball hits wall
       WallCollision(ballObj, canvas, player, paddleProps)
 
