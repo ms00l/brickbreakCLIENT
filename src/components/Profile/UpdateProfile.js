@@ -54,7 +54,7 @@ class UpdateProfile extends Component {
 	        variant: 'danger'
 	      })
 	    })
-	    .then(() => history.push('/profile/' + match.params.id))
+	    .then(() => history.push('/profiles/' + match.params.id))
 	}
 
 	render () {

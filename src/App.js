@@ -14,6 +14,7 @@ import Brickbreaker from './games/brick'
 import CreateProfile from './components/Profile/CreateProfile'
 import ShowProfile from './components/Profile/ShowProfile'
 import UpdateProfile from './components/Profile/UpdateProfile'
+import IndexProfile from './components/Profile/IndexProfile'
 import './App.css'
 
 class App extends Component {
@@ -98,7 +99,7 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            path='/profiles'
+            path='/create-profile'
             render={() => (
               <CreateProfile msgAlert={this.msgAlert} user={user} />
             )}
@@ -110,9 +111,16 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            path='/profiles/:id'
+            path='/profiles/:id/edit'
             render={() => (
               <UpdateProfile msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/profile'
+            render={() => (
+              <IndexProfile msgAlert={this.msgAlert} user={user} />
             )}
           />
         </main>

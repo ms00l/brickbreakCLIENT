@@ -53,3 +53,18 @@ export const changePassword = (passwords, user) => {
     }
   })
 }
+
+export const updateScore = (data, id, user) => {
+  return axios({
+    url: apiUrl + '/profiles/' + id,
+    method: 'PATCH',
+    data: {
+      credentials: {
+        score: data.value
+      }
+    },
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}

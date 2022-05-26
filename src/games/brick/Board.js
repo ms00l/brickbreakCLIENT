@@ -10,7 +10,7 @@ import PaddleCollision from '../util/PaddleCollision'
 import Player from './Player'
 import NewLevel from '../util/NewLevel'
 import Reset from '../util/Reset'
-import { updateProfile } from '../../api/profile'
+// import { updateScore } from '../../api/auth'
 
 let bricks = []
 
@@ -51,13 +51,14 @@ export default function Board (props) {
       Player(ctx, player, canvas)
 
       // game ending if statement
-      if (player.lives === 4) {
-        let score = { value: player.score }
-        // ASK AMALIA ABOUT THIS PART, props._id undefined
-        // console.log(props._id)
-        console.log(JSON.stringify(props._id))
-        let axiosData = { score: score }
-        updateProfile(axiosData, props._id, props.user)
+      if (player.lives === 0) {
+        // let score = { value: player.score }
+        // // ASK AMALIA ABOUT THIS PART I WANT TO DIE I WANT TO DIE I WANT TO DIE I WANT TO DIE, props._id undefined
+        // // console.log(props._id)
+        // console.log(props.user._id)
+        // let axiosData = { score: score }
+        // console.log(props.user._id)
+        // updateScore(axiosData, props.user._id, props.user)
         player.lives = 5
         player.level = 1
         player.score = 0
@@ -97,8 +98,8 @@ export default function Board (props) {
             ballObj.dy *= -1
             bricks[i].broken = true
           }
-          // adds 1 to score once brick is broken
-          player.score += 1
+          // adds 249385 to score once brick is broken
+          player.score += 249385
         }
       }
 
@@ -112,6 +113,7 @@ export default function Board (props) {
       //   ctx.fill()
       //   ctx.stroke()
       //   x += 8
+      // eslint-disable-next-line no-undef
       requestAnimationFrame(render)
     }
     render()

@@ -40,7 +40,7 @@ class ShowProfile extends Component {
 	  const { match, user, msgAlert, history } = this.props
 
 	  deleteProfile(match.params.id, user)
-	    .then(() => history.push('/profiles'))
+	    .then(() => history.push('/create-profile'))
 	    .then(() => {
 	      msgAlert({
 	        heading: 'Delete success',
@@ -92,7 +92,7 @@ class ShowProfile extends Component {
 	                  className='formButton btn1'
 	                  variant='outline-dark'
 	                  onClick={() =>
-	                    history.push(`/profile/${match.params.id}/edit`)
+	                    history.push(`/profiles/${match.params.id}/edit`)
 	                  }>
 										Update
 	                </Button>

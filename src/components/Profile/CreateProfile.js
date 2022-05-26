@@ -45,7 +45,7 @@ class CreateProfile extends Component {
 	      return (responseData = res.data.profile._id)
 	    })
 	    .then(() => {
-	      history.push(`/profile/${responseData}`)
+	      history.push(`/profiles/${responseData}`)
 	    })
 	    .catch((error) => {
 	      msgAlert({

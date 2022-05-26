@@ -11,7 +11,9 @@ const authenticatedOptions = (
     </NavLink>
     <NavLink to='/brickbreaker' className='nav-link'>Play!
     </NavLink>
-    <NavLink to='/profiles' className='nav-link'>Profile
+    <NavLink to='/create-profile' className='nav-link'>Create/Edit Profile
+    </NavLink>
+    <NavLink to='/profile' className='nav-link'>View Profiles
     </NavLink>
   </Fragment>
 )
@@ -30,7 +32,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar expand='md' useTransparent>
+  <Navbar useTransparent expand='md'>
     <Navbar.Brand>
       <Link to='/' style={{ color: 'Black', textDecoration: 'none' }}>BRICKBREAKER</Link>
     </Navbar.Brand>

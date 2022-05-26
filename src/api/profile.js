@@ -4,7 +4,7 @@ import axios from 'axios'
 export const createProfile = (data, user) => {
   return axios({
     method: 'POST',
-    url: apiUrl + '/profiles/',
+    url: apiUrl + '/create-profile/',
     data: {
       profile: {
         username: data.username,
@@ -55,9 +55,9 @@ export const deleteProfile = (id, user) => {
     }
   })
 }
-export const indexProfiles = (id, user) => {
+export const indexProfiles = (user) => {
   return axios({
-    url: apiUrl + '/profiles/',
+    url: apiUrl + '/profile/',
     method: 'GET',
     headers: {
       Authorization: `Bearer ${user.token}`
