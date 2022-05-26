@@ -1,3 +1,4 @@
+// function to set up movement of the ball on the canvas
 export function BallMovement (ctx, ballObj) {
   const data = new Ball(ballObj.x, ballObj.y, ballObj.rad)
   data.draw(ctx)
@@ -5,6 +6,7 @@ export function BallMovement (ctx, ballObj) {
   ballObj.y += ballObj.dy
 }
 
+// setting up a class for the ball
 class Ball {
   constructor (x, y, rad) {
     this.x = x

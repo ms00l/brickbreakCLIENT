@@ -1,3 +1,7 @@
+// kinda confusing i know lol
+// Brick is the function that sets up an array of 'newbricks'
+// inside 'newbricks' is the class of a singular brick that gets created with the const of 'newBrick'
+// literally just bricks on bricks
 export default function Brick (level, bricks, canvas, brick) {
   brick.width = canvas.width / 5 - 1
   const newbricks = []
@@ -9,7 +13,6 @@ export default function Brick (level, bricks, canvas, brick) {
     return
   }
 
-  // Brick Formation here
   for (let i = 0; i < 5 * level; i++) {
     const newBrick = new SingleBrick(
       brick.x + brick.width,
@@ -19,7 +22,6 @@ export default function Brick (level, bricks, canvas, brick) {
       brick.colors
     )
     newbricks.push(newBrick)
-    // newBrick.draw();
     brick.x += brick.width + 1
     if (brick.x + brick.width >= canvas.width) {
       brick.x = 0.5
@@ -29,6 +31,7 @@ export default function Brick (level, bricks, canvas, brick) {
   return newbricks
 }
 
+// class for a singular brick, feeds into the array of newbricks
 class SingleBrick {
   constructor (x, y, w, h, c) {
     this.x = x - w

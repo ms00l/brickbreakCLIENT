@@ -1,3 +1,4 @@
+// Paddle class to set up its movement on the canvas and its initial properties
 export default (ctx, canvas, paddleProps) => {
   class Paddle {
     constructor (x) {
@@ -21,7 +22,10 @@ export default (ctx, canvas, paddleProps) => {
       ctx.fill()
     }
   }
+  // setting the const of paddle to create a new Paddle throwing in its current position of the x axis
   const paddle = new Paddle(paddleProps.x)
+  // setting up the boundaries for the paddle
+  // if statement ensures it stays within canvas' width or 'boundary'
   paddle.move()
   if (paddleProps.x <= 0) {
     paddleProps.x = 0

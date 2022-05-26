@@ -6,7 +6,7 @@ export default function Player (ctx, player, canvas) {
   ctx.fillStyle = 'white'
   ctx.fillText(`Name: ${player.name}`, 20, 30)
 
-  // amount of balls left
+  // amount of lives left
   ctx.font = '20px Karla'
   ctx.fillStyle = 'red'
   let gap = 0
