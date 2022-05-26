@@ -24,9 +24,10 @@ export const updateProfile = (data, id, user) => {
     method: 'PATCH',
     data: {
       profile: {
-        username: data.username,
-        first: data.first,
-        last: data.last
+        username: data?.username,
+        first: data?.first,
+        last: data?.last,
+        score: data?.score
       }
     },
     headers: {

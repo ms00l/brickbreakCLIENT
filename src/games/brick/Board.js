@@ -10,6 +10,7 @@ import PaddleCollision from '../util/PaddleCollision'
 import Player from './Player'
 import NewLevel from '../util/NewLevel'
 import Reset from '../util/Reset'
+import { updateProfile } from '../../api/profile'
 
 let bricks = []
 
@@ -30,7 +31,7 @@ const { ballObj, paddleProps, player, brickObj } = data
 //   isPlaying = true
 // }
 
-export default function Board () {
+export default function Board (props) {
   const canvasRef = useRef(null)
   useEffect(() => {
     const render = () => {
@@ -50,7 +51,13 @@ export default function Board () {
       Player(ctx, player, canvas)
 
       // game ending if statement
-      if (player.lives === 0) {
+      if (player.lives === 4) {
+        let score = { value: player.score }
+        // ASK AMALIA ABOUT THIS PART, props._id undefined
+        // console.log(props._id)
+        console.log(JSON.stringify(props._id))
+        let axiosData = { score: score }
+        updateProfile(axiosData, props._id, props.user)
         player.lives = 5
         player.level = 1
         player.score = 0

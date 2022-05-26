@@ -2,10 +2,10 @@
 import React from 'react'
 import Board from './Board'
 
-export default function Brickbreaker () {
+export default function Brickbreaker (props) {
   return (
     <div>
-      <Board />
+      <Board user={props.user} />
     </div>
   )
 }
