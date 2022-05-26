@@ -5,8 +5,6 @@ import Form from 'react-bootstrap/Form'
 import { createProfile } from '../../api/profile'
 import { withRouter } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
-import './profile.css'
-
 class CreateProfile extends Component {
   constructor (props) {
     super(props)
@@ -66,10 +64,9 @@ class CreateProfile extends Component {
 	        onSubmit={this.handleSubmit}>
 	        <div className='box'>
 	          <h3>Create Profile</h3>
-	          <span className='material-icons'>account_circle</span>
 	        </div>
 	        <Form.Group controlId='username'>
-	          <Form.Label>User Name</Form.Label>
+	          <Form.Label>Username</Form.Label>
 	          <Form.Control
 	            required
 	            name='username'

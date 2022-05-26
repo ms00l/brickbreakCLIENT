@@ -11,6 +11,9 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import Header from './components/Header/Header'
 import Brickbreaker from './games/brick'
+import CreateProfile from './components/Profile/CreateProfile'
+import ShowProfile from './components/Profile/ShowProfile'
+import UpdateProfile from './components/Profile/UpdateProfile'
 import './App.css'
 
 class App extends Component {
@@ -91,8 +94,25 @@ class App extends Component {
           <AuthenticatedRoute
             user={user}
             path='/brickbreaker'
+            render={() => <Brickbreaker user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/profiles'
             render={() => (
-              <Brickbreaker user={user} />
+              <CreateProfile msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/profiles/:id'
+            render={() => <ShowProfile msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/profiles/:id'
+            render={() => (
+              <UpdateProfile msgAlert={this.msgAlert} user={user} />
             )}
           />
         </main>

@@ -9,7 +9,7 @@ import BrickCollision from '../util/BrickCollision'
 import PaddleCollision from '../util/PaddleCollision'
 import Player from './Player'
 import NewLevel from '../util/NewLevel'
-// import Reset from '../util/Reset'
+import Reset from '../util/Reset'
 
 let bricks = []
 
@@ -34,13 +34,13 @@ export default function Board () {
       Player(ctx, player, canvas)
 
       // game ending if statement
-      // if (player.lives === 0) {
-      //   player.lives = 5
-      //   player.level = 1
-      //   player.score = 0
-      //   Reset(ballObj, paddleProps)
-      //   bricks.length = 0
-      // }
+      if (player.lives === 0) {
+        player.lives = 5
+        player.level = 1
+        player.score = 0
+        Reset(ballObj, paddleProps, canvas)
+        bricks.length = 0
+      }
 
       // displays the bricks
       bricks.map((brick) => {

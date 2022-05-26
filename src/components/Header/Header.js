@@ -5,9 +5,14 @@ import { Link, NavLink } from 'react-router-dom'
 
 const authenticatedOptions = (
   <Fragment>
-    <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
-    <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
-    <NavLink to='/brickbreaker' className='nav-link'>Play!</NavLink>
+    <NavLink to='/change-password' className='nav-link'>Change Password
+    </NavLink>
+    <NavLink to='/sign-out' className='nav-link'>Sign Out
+    </NavLink>
+    <NavLink to='/brickbreaker' className='nav-link'>Play!
+    </NavLink>
+    <NavLink to='/profiles' className='nav-link'>Profile
+    </NavLink>
   </Fragment>
 )
 
@@ -27,7 +32,7 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <Navbar expand='md' useTransparent>
     <Navbar.Brand>
-      <Link to='/' style={{ color: 'Black', textDecoration: 'none' }}>ITS FUCKING BRICKBREAKER BITCH</Link>
+      <Link to='/' style={{ color: 'Black', textDecoration: 'none' }}>BRICKBREAKER</Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>

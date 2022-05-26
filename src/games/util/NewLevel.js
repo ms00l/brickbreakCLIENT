@@ -1,6 +1,7 @@
 /* eslint-disable prefer-const */
 // importing game data so that bricks stay aligned at top of canvas on new level
 import data from '../../gameData'
+// import ResetBall from './Reset'
 // function to determine level is over when all the bricks are broken
 export default function NewLevel (bricks, player, canvas, ballObj) {
   let { brickObj } = data
@@ -14,7 +15,6 @@ export default function NewLevel (bricks, player, canvas, ballObj) {
       // 'player.lives++' written here was supposed to fix bug but instead its an infinite lives cheat code
       // i really love programming this is amazing LOL
       // player.lives++
-      console.log(player.lives)
     }
     // once all bricks are broken it adds mores bricks
   }
@@ -23,7 +23,8 @@ export default function NewLevel (bricks, player, canvas, ballObj) {
     // gives player one extra life for passing level
     // player.lives++
     player.level++
-    ballObj.y = canvas.height - 20
+    // ResetBall(ballObj, canvas, paddleProps)
+    // ballObj.y = canvas.height - 20
     // resetting bricks y axis back to original int of 50
     // this for some reason causes the player.lives++ to not work
     brickObj.y = 50
