@@ -16,8 +16,10 @@ export default {
     colors: ['white', 'lightblue']
   },
   player: {
+    // username when created shows here
     name: 'big dogg mcgraw',
     lives: 5,
+    // score from game patchs to api
     score: 0,
     level: 1
   },

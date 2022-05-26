@@ -14,6 +14,21 @@ import Reset from '../util/Reset'
 let bricks = []
 
 const { ballObj, paddleProps, player, brickObj } = data
+// let isPlaying = true
+// // trying to set up a pause button lol
+// const onClickCanvas = function (isPlaying) {
+//   clearInterval(this._interval)
+//   isPlaying = false
+// }
+
+// const onReclickCanvas = function (isPlaying) {
+//   let self = this
+//   clearInterval(self._interval)
+//   this._interval = setInterval(function () {
+//     self.drawAnimation()
+//   }, 10)
+//   isPlaying = true
+// }
 
 export default function Board () {
   const canvasRef = useRef(null)
@@ -21,6 +36,7 @@ export default function Board () {
     const render = () => {
       const canvas = canvasRef.current
       const ctx = canvas.getContext('2d')
+
       // assigning paddleprops so that the paddle physics work:
       paddleProps.y = canvas.height - 30
 
@@ -97,6 +113,7 @@ export default function Board () {
     <>
       <canvas id="canvas"
         ref={canvasRef}
+        // onClick={this.onClickCanvas}
         onMouseMove={(event) => (paddleProps.x = event.clientX - paddleProps.width / 2)}
         height="500"
         width="800" />
