@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/brickbreakCLIENT/static/css/main.e58a36b2.chunk.css",
+    "main.js": "/brickbreakCLIENT/static/js/main.714fa462.chunk.js",
+    "main.js.map": "/brickbreakCLIENT/static/js/main.714fa462.chunk.js.map",
+    "runtime-main.js": "/brickbreakCLIENT/static/js/runtime-main.a6c358ec.js",
+    "runtime-main.js.map": "/brickbreakCLIENT/static/js/runtime-main.a6c358ec.js.map",
+    "static/js/2.701011d9.chunk.js": "/brickbreakCLIENT/static/js/2.701011d9.chunk.js",
+    "static/js/2.701011d9.chunk.js.map": "/brickbreakCLIENT/static/js/2.701011d9.chunk.js.map",
+    "index.html": "/brickbreakCLIENT/index.html",
+    "static/css/main.e58a36b2.chunk.css.map": "/brickbreakCLIENT/static/css/main.e58a36b2.chunk.css.map",
+    "static/js/2.701011d9.chunk.js.LICENSE.txt": "/brickbreakCLIENT/static/js/2.701011d9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a6c358ec.js",
+    "static/js/2.701011d9.chunk.js",
+    "static/css/main.e58a36b2.chunk.css",
+    "static/js/main.714fa462.chunk.js"
+  ]
+}
