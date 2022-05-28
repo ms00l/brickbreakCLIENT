@@ -20,13 +20,14 @@ class UpdateProfile extends Component {
   componentDidMount () {
     const { match, user } = this.props
 
-    showProfile(match.params.id, user).then((res) =>
-      this.setState({
-        username: res.data.profile.username,
-        first: res.data.profile.first,
-        last: res.data.profile.last
-      })
-    )
+    showProfile(match.params.id, user)
+      .then((res) =>
+        this.setState({
+          username: res.data.profile.username,
+          first: res.data.profile.first,
+          last: res.data.profile.last
+        })
+      )
   }
 
 	handleChange = (event) =>
@@ -59,7 +60,7 @@ class UpdateProfile extends Component {
 
 	render () {
 	  if (this.state.updated) {
-	    return <Redirect to={'/chat/' + this.props.match.params.id} />
+	    return <Redirect to={'/profiles/' + this.props.match.params.id} />
 	  }
 	  return (
 	    <div>
